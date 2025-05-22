@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer components {
+  .stop-watch-buton-group {
+    @apply my-5 flex gap-5 text-[1.3rem];
+  }
+  .stop-watch-buton-group button {
+    @apply text-white px-20 py-3 rounded cursor-pointer transition-all;
+  }
+}

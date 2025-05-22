@@ -1,23 +1,32 @@
 import React from "react";
 
 const Hero = () => {
-  const [currentIndex, setCurrentIndex] = React.useState(1);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
   const [hasClicked, setHasClicked] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
   const [loadedVideos, setLoadedVideos] = React.useState(0);
 
-  const totalVideos = 3;
+  const totalVideos = 4;
   const nextVideoRef = React.useRef(null);
 
   const handleVideoLoaded = () => {
-    setLoadedVideos((prev) => prev + 1);
+    setLoadedVideos((prev) => {
+      return prev + 1;
+    });
   };
-
-  const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
+  const upcomingVideoIndex = (currentIndex + 1) % totalVideos;
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
     setCurrentIndex(upcomingVideoIndex);
+    console.log(upcomingVideoIndex);
+  };
+  // different approach
+  const handleMiniVdClick2 = () => {
+    setCurrentIndex((prev) => {
+      const next = prev + 1;
+      return next === totalVideos ? 0 : next; // Reset manually if needed
+    });
   };
 
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;

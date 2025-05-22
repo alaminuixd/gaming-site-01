@@ -44,9 +44,6 @@ body {
   }
 }
 @import "tailwindcss";
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
 
 @theme {
   --font-styleScript: styleScript, "sans-serif";
@@ -94,7 +91,7 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-@utility special-font b {
+@utility special-font {
   font-family: "Zentry";
   font-feature-settings: "ss01" on;
 }
@@ -104,7 +101,7 @@ body {
 }
 
 @utility about-subtext {
-  @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+  @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular text-lg md:max-w-[34rem];
 }
 
 @utility about-image {

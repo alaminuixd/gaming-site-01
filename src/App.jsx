@@ -1,5 +1,7 @@
 import React from "react";
 import Hero from "./components/Hero";
+import Test from "./components/Test";
+import StopWatch from "./components/StopWatch";
 
 const App = () => {
   return (

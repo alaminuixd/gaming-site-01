@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@layer base {
+  /*  */
+}
+
+@layer components {
+  .form {
+    @apply p-10 rounded-lg bg-white flex flex-col gap-2;
+  }
+  .form input[type="text"] {
+    @apply border rounded p-2 mb-3;
+  }
+  .form button[type="submit"] {
+    @apply bg-blue-600 text-white p-3 rounded cursor-pointer;
+  }
+}
