@@ -4,10 +4,12 @@ import Test from "./components/Test";
 import StopWatch from "./components/StopWatch";
 import Videos from "./components/Videos";
 import About from "./components/About";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
+      <Navbar />
       <Hero />
       <About />
     </main>
