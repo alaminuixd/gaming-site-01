@@ -22,8 +22,7 @@ const AnimatedTitle = ({ title, containerClass }) => {
         ".animated-word",
         {
           opacity: 1,
-          // transform: "translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg)",
-          transform: "translateY(0)",
+          transform: "translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg)",
           ease: "power2.inOut",
           stagger: 0.02,
         },
