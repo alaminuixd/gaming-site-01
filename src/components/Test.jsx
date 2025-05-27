@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Test.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -8,6 +8,8 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 const Test = () => {
+  const testRef = useRef(null);
+
   useGSAP(() => {
     // Force a ScrollTrigger refresh after DOM is ready
     setTimeout(() => ScrollTrigger.refresh(), 100);
@@ -30,9 +32,41 @@ const Test = () => {
     });
   });
 
+  /*   const setProps = (el, props) => {
+    for (let key in props) {
+      if (key === "classList") {
+        props[key].forEach((cls) => el.classList.add(cls));
+      } else {
+        el[key] = props[key];
+      }
+      console.log(el[key]);
+    }
+  }; */
+  const setProps = (elm, obj) => {
+    for (let key in obj) {
+      if (key === "classList" && Array.isArray(obj[key])) {
+        obj[key].forEach((cls) => elm.classList.add(cls));
+      } else if (key === "style") {
+        elm.style.cssText = obj[key];
+      } else {
+        elm[key] = obj[key];
+      }
+    }
+  };
+
+  useEffect(() => {
+    setProps(testRef.current, {
+      innerHTML: "Some text",
+      classList: ["one", "two", "three"],
+      id: "box1",
+      style: `color: #FFF`,
+    });
+    testRef.current.addEventListener("click", () => alert("hi"));
+  }, []);
+
   return (
     <div className="min-h-screen w-full bg-gray-200 flex gap-10 justify-center items-center flex-col">
-      <div className="w-64 h-64 bg-blue-600"></div>
+      <div className="w-64 h-64 bg-blue-600" ref={testRef}></div>
       <div className="w-64 h-64 bg-blue-600"></div>
       <div id="mainElm" className="w-64 h-64 bg-blue-600"></div>
       <div className="w-64 h-64 bg-blue-600"></div>

@@ -5,6 +5,7 @@ import StopWatch from "./components/StopWatch";
 import Videos from "./components/Videos";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
+import Features from "./components/Features";
 
 const App = () => {
   return (
@@ -12,12 +13,14 @@ const App = () => {
       <Navbar />
       <Hero />
       <About />
+      <Features />
     </main>
   );
 };
 
 export default App;
 /* 
+            <Navbar />
       <Hero />
-      <section className="z-0 min-h-screen bg-blue-500" />
+      <About />
 */

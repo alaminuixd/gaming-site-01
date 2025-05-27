@@ -38,7 +38,7 @@ const Hero = () => {
     if (loadedVideos === totalVideos - 1) {
       setIsLoading(false);
     }
-    console.log(loadedVideos);
+    // console.log(loadedVideos);
   }, [loadedVideos]);
   // console.log(nextVideoRef.current);
   useGSAP(
